@@ -1,54 +1,42 @@
 import React, {useState} from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './App.css';
 // import TodoList from "./Components/TodoList.js";
 // import TodoForm from "./Components/TodoForm.js";
 // import Header from "./Components/Header.js";
-import Todo from "./Components/Todo.js";
-
+// import Todo from "./components/Todo.js";
 
 function App() {
+  const[data,setData] = useState({})
 
-  const [todos, setTodos] = useState([]);
+  const url =`https://jsonplaceholder.typicode.com/users/1/todos`
 
-    // axios.get("/todos").then((serverTodos) => {
-    //     setTodos(serverTodos.data);
-    // });
-  
-  return (
-
-    <div className="container">
-      <div className="App">
-        {/* <Header /> */}
-        {/* <TodoForm /> */}
-        {/* <TodosList todos={todos} /> */}
-        {/* <DeleteTodo /> */}
-        <Todo />
-      </div>
-    </div>
-  );
-}
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
+      axios.get(url).then((response) => { 
+        setData(response.data)
+        console.log(response.data)
+        // console.log(data[4].id)
+      })
+      return (
+        <div className='container'>
+          <div className='app'>
+            <div className='header'>
+              {/* <Header /> */}
+            </div>
+            <div className='todosummary'>
+              <div className='todolist'>
+                {/* <TodoList /> */}
+              </div>
+              <div className='todoactions'>
+                <div className='newtodo'>
+                  {/* <NewTodo /> */}
+                </div>
+                <div className='deltodo'>
+                  {/* <Deltodo /> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
 export default App;

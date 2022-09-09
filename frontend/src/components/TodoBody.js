@@ -1,11 +1,11 @@
-import Todo from './Todo.js'
+import Todo from '.Todo.js'
 
-const Todo = (props) => {
+const TodoBody = (props) => {
     return (
         <section>
-            <TwootCard newTodo={props}/>
+            <Todo newTodo={props}/>
         </section>
     )
 };
 
-export default Todo;
+export default TodoBody;

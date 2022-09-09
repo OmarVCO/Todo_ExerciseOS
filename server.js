@@ -24,31 +24,3 @@ app.get('/todos', (req, res) => {
       console.log(newTodos);
     });
 });
-
-// app.post('/twoot', (req, res) => {
-//   if (!req.body || !req.body.newTwoot) {
-//     res.status(400).send('Invalid data! Please, review the documentation.');
-//   } else {
-//     const { author, authorSlug, content, dateAdded } = req.body.newTwoot;
-//     if (
-//       !author ||
-//       !author.trim() ||
-//       !authorSlug ||
-//       !authorSlug.trim() ||
-//       !content ||
-//       !content.trim() ||
-//       !dateAdded ||
-//       !dateAdded.trim()
-//     ) {
-//       res
-//         .status(400)
-//         .send(
-//           'Invalid data! At least one of the fields is empty or missing. Please, review the data that was sent.'
-//         );
-//     } else {
-//       const newTwoot = { ...req.body.newTwoot, _id: uuidv4() };
-//       twoots = [newTwoot, ...twoots];
-//       res.status(201).json(newTwoot);
-//     }
-//   }
-// });

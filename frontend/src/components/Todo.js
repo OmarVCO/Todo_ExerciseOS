@@ -25,7 +25,7 @@ const getTodo = async () =>{
         });
     };
 
-    retun (
+    return (
         <Fragment>
             {todo && createTodo()}
         </Fragment>
