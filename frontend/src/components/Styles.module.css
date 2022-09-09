@@ -7,7 +7,7 @@
    .header{
     display: flex;
     flex-direction: row;
-    background-image: url(/public/Texturebgpur.jpeg);
+    /* background-image: url(/public/Texturebgpur.jpeg); */
     display: flex;
     justify-content: space-between;
   }

@@ -1,34 +1,21 @@
-import { Fragment, useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
+import styles from './Styles.module.css'
+// import axios from "axios";
 
 const Todo = (props) => {
-    const [todo, setTodo] = useState();
 
-const getTodo = async () =>{
-    try {
-        const res = await axios.get("https://jsonplaceholder.typicode.com/users/1/todos")
-        setTodo(res.data)
-    }catch(error){
-        console.log(error)
-        alert(error)
-    }
-}
-    useEffect(() => {
-        getTodo();
-    }, [props.newTodo]);
-
-    const createTodo = () => {
-        return todo.map((id) => {
-            return (
-                <div></div>
-            );
-        });
-    };
+    // const [todo, setTodo] = useState();
 
     return (
-        <Fragment>
-            {todo && createTodo()}
-        </Fragment>
+        <li className={styles.todo}>
+        <div className={styles.todoTitle}>
+            <p>{props.title}</p>
+        <div className={styles.todoCompleted}>
+            <p>{props.completed}</p></div>
+        <div className={styles.todoid}>
+        <p>{props.id}</p></div>
+        </div>
+      </li>
     );
 };
 

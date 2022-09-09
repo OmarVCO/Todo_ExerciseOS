@@ -13,14 +13,14 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-let todos = [];
+let todo = [];
 
 app.get('/todos', (req, res) => {
   axios
     .get('https://jsonplaceholder.typicode.com/users/1/todos')
     .then((response) => {
-      const newTodos = [...todos, ...response.data.results];
+      const newTodos = [...todo, ...response.data.results];
       res.status(200).json(newTodos);
-      console.log(newTodos);
+      // console.log(newTodos);
     });
 });

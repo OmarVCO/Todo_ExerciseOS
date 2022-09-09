@@ -3,7 +3,7 @@ import Todo from '.Todo.js'
 const TodoBody = (props) => {
     return (
         <section>
-            <Todo newTodo={props}/>
+            <Todo Todo={props}/>
         </section>
     )
 };

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './App.css';
-// import TodoList from "./Components/TodoList.js";
+import TodoList from "./components/TodoList.js";
 // import TodoForm from "./Components/TodoForm.js";
 // import Header from "./Components/Header.js";
 // import Todo from "./components/Todo.js";
@@ -24,7 +24,7 @@ function App() {
             </div>
             <div className='todosummary'>
               <div className='todolist'>
-                {/* <TodoList /> */}
+                <TodoList />
               </div>
               <div className='todoactions'>
                 <div className='newtodo'>
